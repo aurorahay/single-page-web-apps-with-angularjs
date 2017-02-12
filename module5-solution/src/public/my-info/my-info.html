@@ -1,0 +1,19 @@
+<div class="container">
+  <div ng-show="myInfoController.signUp">
+    Not Signed Up Yet.
+    <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div ng-if="!myInfoController.signUp">
+    <h1>{{myInfoController.info.firstName}} {{myInfoController.info.lastName}}</h1>
+    <div>{{myInfoController.info.email}}</div>
+    <div>{{myInfoController.info.phone}}</div>
+    <div><strong>Favorite Dish:</strong></div>
+    <div><strong>{{myInfoController.info.favorite}}:</strong> {{myInfoController.favoriteDetails.name}}</div>
+    <img class="img-responsive"
+          width="250"
+          height="150"
+          ng-src="https://aurorahay.herokuapp.com/images/{{myInfoController.info.favorite}}.jpg"
+          alt="{{myInfoController.favoriteDetails.name}}">
+    <div>{{myInfoController.favoriteDetails.description}}</div>
+  </div>
+</div>
